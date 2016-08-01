@@ -6,7 +6,7 @@ import java.util.concurrent.Semaphore;
 
 /** * Created by huaaijia on 2014/8/21.
  *
- * 08
+ * 08 配合冲入锁一起理解
  * */
 public class TestSemaphore {
     public static void main(String[] args) {
