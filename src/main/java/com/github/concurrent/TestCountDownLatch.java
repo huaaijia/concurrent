@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 /**
  * Created by huaaijia on 2014/8/21.
  *
- * 05
+ * 05 CountDownLatch
  */
 public class TestCountDownLatch {
     public static void main(String[] args) throws InterruptedException {

@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by huaaijia on 2014/8/21.
  *
- * 04
+ * 04 BlockingQueue
  */
 public class TestBlockingQueue {
     static long randomTime() {

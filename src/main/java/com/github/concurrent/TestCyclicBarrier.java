@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 /**
  * Created by huaaijia on 2014/8/21.
  *
- * 03
+ * 03 CyclicBarrier
  */
 public class TestCyclicBarrier {
     // 徒步需要的时间: Shenzhen, Guangzhou, Shaoguan, Changsha, Wuhan

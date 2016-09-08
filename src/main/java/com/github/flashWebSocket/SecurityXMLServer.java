@@ -55,6 +55,12 @@ public class SecurityXMLServer implements Runnable {
             try {
                 //接收客户端的连接
                 client = server.accept();
+                //http://cuisuqiang.iteye.com/blog/1725348
+                //http://blog.csdn.net/u014569459/article/details/38542949
+                /**
+                 * setSoTimeout()这个方法所设置的超时时间还未结束的时候，可以通过socket.getInputStream()获得的InputStream对象进行二次读取。在二次读取的时候，如果客户端如果没有进行二次请求，InputStream对象二次读取的时候会死锁，直到客户端二次请求时才会继续运行，但是一旦超过setSoTimeout()方法所设置的超时时间，便会抛出java.net.SocketTimeoutException: Read timed out异常。也就是说两次请求间隔时间如果超过setSoTimeout()方法设置的超时时间，就会抛出异常，结束InputStream的二次读取
+                 */
+                client.setSoTimeout(1000);//ms
 
                 InputStreamReader input = new InputStreamReader(client.getInputStream(), "UTF-8");
                 reader = new BufferedReader(input);
@@ -64,7 +70,7 @@ public class SecurityXMLServer implements Runnable {
                 //读取客户端发送的数据
                 StringBuilder data = new StringBuilder();
                 int c = 0;
-                while ((c = reader.read()) != -1) {
+                while ((c = reader.read()) != -1) {//出错点
                     if (c != '\0')
                         data.append((char) c);
                     else
