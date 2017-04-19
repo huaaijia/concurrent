@@ -42,10 +42,10 @@ public class TestFixedThreadPool {
             };
             exec.execute(run);
         }
-//        System.out.println("main:before exec.shundown().");
-//        // must shutdown,否则主线程无法结束
-//        exec.shutdown();
-//        System.out.println("main:after exec.shundown().");
+        System.out.println("main:before exec.shundown().");
+        // must shutdown,否则主线程无法结束
+        exec.shutdown();
+        System.out.println("main:after exec.shundown().");
     }
 
 }
